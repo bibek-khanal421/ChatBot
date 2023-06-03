@@ -1,0 +1,61 @@
+{
+    "replies": [
+        {
+            "label": "greeting",
+            "reply": [
+                "Hello",
+                "Hi",
+                "Hey",
+                "Hi there"
+            ]
+        },
+        {
+            "label": "goodbye",
+            "reply": [
+                "Bye",
+                "Goodbye",
+                "See you later"
+            ]
+        },
+        {
+            "label": "thanks",
+            "reply": [
+                "Thanks",
+                "Thank you"
+            ]
+        },
+        {
+            "label": "welcome",
+            "reply": [
+                "You're welcome",
+                "No problem",
+                "My pleasure"
+            ]
+        },
+        {
+            "label": "describe",
+            "reply": [
+                "Hello!, I am a skynet",
+                "I am a skynet",
+                "skynet here, how can I help you?"
+            ]
+
+        },
+        {
+            "label": "help",
+            "reply": [
+                "How can I help you?",
+                "What can I do for you?",
+                "Is there something I can help you with?"
+            ]
+        },
+        {
+            "label": "default",
+            "reply": [
+                "Sorry, I didn't get that. Can you say it again?",
+                "I missed that. Can you say it again?",
+                "sorry, I can't help you with that"
+            ]
+        }
+    ]
+}
