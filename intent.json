@@ -1,13 +1,13 @@
 {
-    "inetnt":[
+    "intent":[
         {
             "label": "greeting",
             "pattern": ["hello","hi","hey","good morning","good evening","good afternoon","good day","greetings","how are you","howdy","what's up","sup","yo","hiya",
-            "hey there","hi there","heya","hello there","hola","bonjour","ciao","hallo","how do you do","nice to meet you","pleased to meet you","g'day","hi-ya"]
+            "hey there","hi there","heya","hola","bonjour","ciao","hallo","how do you do","hi-ya"]
         },
         {
             "label": "goodbye",
-            "pattern": ["bye","goodbye","good-bye","see you","see ya","later","laters","cya","adios","cheerio","bye bye","bye-bye","farewell","have a good day",
+            "pattern": ["bye","goodbye","see you","see ya","later","laters","cya","adios","cheerio","bye bye","bye-bye","farewell","have a good day",
             "have a nice day","have a good one","catch you later","talk to you later"]
 
         },
@@ -18,6 +18,10 @@
         {
             "label": "welcome",
             "pattern": ["you're welcome","you are welcome","no problem","no worries","not a problem","my pleasure","it was my pleasure","it's my pleasure","don't mention it"]
+        },
+        {
+            "label": "thanks",
+            "pattern": ["thanks","thank you","cheers","thank you very much","thank you so much","thanks a lot","thanks a bunch","much appreciated","much obliged"]
         },
         {
             "label": "describe",
