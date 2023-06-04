@@ -1,5 +1,4 @@
-# ChatBot
-simple chatbot application 
+# Simple ChatBot 
 navigate to the root directory and follow the steps below:
 - use command "python train.py" to train the model
 to change training parameters 
