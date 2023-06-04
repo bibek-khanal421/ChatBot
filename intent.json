@@ -1,41 +1,40 @@
 {
     "intent":[
         {
+            "label": "describe",
+            "pattern": ["what is this","what is this bot","what is this chatbot for",
+            "what is this thing for","what is this chatbot about","what can you do",
+            "what is your name"]
+        },
+        {
             "label": "greeting",
-            "pattern": ["hello","hi","hey","good morning","good evening","good afternoon","good day","greetings","how are you","howdy","what's up","sup","yo","hiya",
-            "hey there","hi there","heya","hola","bonjour","ciao","hallo","how do you do","hi-ya"]
+            "pattern": ["hello","hi","hey","greetings","how are you",
+            "hiya","hey there","hi there","heya","how do you do"]
         },
         {
             "label": "goodbye",
-            "pattern": ["bye","goodbye","see you","see ya","later","laters","cya","adios","cheerio","bye bye","bye-bye","farewell","have a good day",
-            "have a nice day","have a good one","catch you later","talk to you later"]
+            "pattern": ["bye","goodbye","see you","see ya","later","laters","bye bye","farewell",
+            "have a nice day","catch you later","talk to you later"]
 
         },
         {
             "label": "thanks",
-            "pattern": ["thanks","thank you","cheers","thank you very much","thank you so much","thanks a lot","thanks a bunch","much appreciated","much obliged"]
+            "pattern": ["you are good at your job","you are great","well done","you were helpful"]
         },
         {
             "label": "welcome",
-            "pattern": ["you're welcome","you are welcome","no problem","no worries","not a problem","my pleasure","it was my pleasure","it's my pleasure","don't mention it"]
-        },
-        {
-            "label": "thanks",
-            "pattern": ["thanks","thank you","cheers","thank you very much","thank you so much","thanks a lot","thanks a bunch","much appreciated","much obliged"]
-        },
-        {
-            "label": "describe",
-            "pattern": ["what is this","what is this bot","what is this chatbot","what is this chat bot","what is this thing","what is this thing for",
-            "what is this for","what is this chatbot for","what is this chat bot for","what is this thing for","what is this thing for","what is this chatbot about","what can you do",
-            "what is your name"]
+            "pattern": ["thanks for helping me","you were a good help","thanks for solving the problem",
+            "thank you"]
         },
         {
             "label": "help",
-            "pattern": ["help","help me","can you help me","can you help","what can you do","what are you capable of","what are you able to do","what are you able to help with"]
+            "pattern": ["help","help me","can you help me","can you help",
+            "what can you do","what are you capable of","what are you able to do","what are you able to help with"]
         },
         {
             "label": "default",
-            "pattern": ["random","this is a house","is this a helicopter","this is a car","this is a boat","this is a plane","this is a train",
+            "pattern": ["random","this is a house","is this a helicopter",
+            "this is a car","this is a boat","this is a plane","this is a train",
             "this is a bus","this is a truck"]
         }
     ]

@@ -6,7 +6,8 @@
                 "Hello",
                 "Hi",
                 "Hey",
-                "Hi there"
+                "Hi there",
+                "Hiya"
             ]
         },
         {
@@ -28,7 +29,6 @@
             "label": "welcome",
             "reply": [
                 "You're welcome",
-                "No problem",
                 "My pleasure"
             ]
         },
