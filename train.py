@@ -1,12 +1,12 @@
 import torch
 from torchmetrics import Accuracy
-from torch.nn import Sequential, Linear, ReLU, Softmax, CrossEntropyLoss
+from torch.nn import Sequential, Linear, Dropout, ReLU, Softmax, CrossEntropyLoss
 from torch.optim import Adam
 import json 
 import sys 
 import getopt
 from tqdm import tqdm
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import numpy as np
 import nltk
 nltk.download('stopwords')
@@ -15,11 +15,12 @@ import pickle
 import os
 
 #initializing the opts and args variables
-opts, args = getopt.getopt(sys.argv[1:], "e:l:b:", ["epoch=", "learning_rate=", "batch_size="])
+opts, args = getopt.getopt(sys.argv[1:], "e:l:b:f:", ["epoch=", "learning_rate=", "batch_size=", "feature="])
 
-epoch = 500
-learning_rate = 0.01
+epoch = 1000
+learning_rate = 0.02
 batch_size = 0
+features = None
 
 for opt, arg in opts:
     if opt in ("-e", "--epoch"):
@@ -37,6 +38,12 @@ for opt, arg in opts:
     elif opt in ("-b", "--batch_size"):
         try: 
             batch_size = int(arg)
+        except ValueError:
+            raise ValueError("Batch size must be an integer")
+        
+    elif opt in ("-f", "--feature"):
+        try: 
+            features = int(arg)
         except ValueError:
             raise ValueError("Batch size must be an integer")
 
@@ -66,7 +73,8 @@ class Train():
         return np.array(data), name2id
         
     def process_data(self, data):
-        vectorizer = TfidfVectorizer(lowercase=True, stop_words=stopwords.words('english')).fit([str(i[0]) for i in data])
+        vectorizer = TfidfVectorizer(max_features=features, lowercase=True, stop_words=stopwords.words('english')).fit([str(i[0]) for i in data])
+        # vectorizer = CountVectorizer(lowercase=True, stop_words=stopwords.words('english')).fit([str(i[0]) for i in data])
         X = vectorizer.transform([str(i[0]) for i in data])
         self.save_params('vectorizer', vectorizer)
         X = torch.tensor(np.array(X.toarray(), dtype = np.float32))
@@ -76,12 +84,16 @@ class Train():
     
     def get_model(self, input_size, output_size, hidden_size):
         model = Sequential(
-            Linear(input_size, hidden_size),
+            Linear(input_size, 128),
             ReLU(),
-            Linear(hidden_size, hidden_size),
-            Linear(hidden_size, hidden_size),
+            Dropout(0.2),
+            Linear(128, 64),
             ReLU(),
-            Linear(hidden_size, output_size),
+            Dropout(0.2),
+            Linear(64, 32),
+            ReLU(),
+            Dropout(0.2),
+            Linear(32, output_size),
             Softmax(dim=1)
         )
         return model

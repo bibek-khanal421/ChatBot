@@ -4,7 +4,7 @@
             "label": "describe",
             "pattern": ["what is this","what is this bot","what is this chatbot for",
             "what is this thing for","what is this chatbot about","what can you do",
-            "what is your name"]
+            "what is your name","who are you","what are you","what is your purpose"]
         },
         {
             "label": "greeting",
